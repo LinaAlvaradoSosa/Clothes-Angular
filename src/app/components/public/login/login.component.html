@@ -1,0 +1,32 @@
+<div class="cont">
+    <img class="background-img" src="registerbg.jpg" alt="">
+    <div class="form-box">
+        <div class="d-flex justify-content-evenly align-items-center">
+            <div class=" lefty">
+                <div class=" logo-slogan d-flex flex-column align-items-center">
+                    <img src="logo-clothes.jpg" alt="">
+                    <p class="slogan-reg">Cada acción pequeña cuenta en el gran camino hacia un planeta más sano</p>
+                </div>
+            </div>
+            <form  class="d-flex flex-column inputs" [formGroup]="formlogin">
+                <div class="d-flex flex-column">
+                    <label class="form-label" for="email">Correo electronico</label>
+                    <input formControlName="email" id="email" type="text">
+                </div>
+                <div class="d-flex flex-column mt-4 ">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <input formControlName="password" id="password" type="password">
+                </div>
+            </form>
+        </div>
+        <div class="">
+            <div class="options  d-flex flex-column justify-content-center align-items-center">
+            <button class="btn button-login" (click)="login()" type="button">Inicia sesión</button>
+            <p class="no-acc mt-2" >¿No tienes cuenta? <a routerLink="/register">Registrate!</a> </p>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+

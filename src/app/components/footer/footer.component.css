@@ -1,0 +1,50 @@
+footer{
+    background-color: rgba(164, 186, 183, 1);
+    height: 367px;
+    font-family: Roboto Condensed;
+    font-size: 20px;
+
+}
+.iconosFooter {
+    gap: 200px;
+    padding: 80px;
+    margin-right: 75px;
+}
+.iconos-redes {
+    margin-left: 100px;
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+}
+p {
+    cursor: pointer
+}
+
+@media screen and (max-width:  868px){
+    #iconosFooter {
+        display: none;
+    }
+    footer{
+        height: 500px;
+    }
+}
+
+
+
+@keyframes bounce{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(8px)
+        }
+    75%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    }
+.bouncy:hover {
+    animation: bounce .5s ease;
+}

@@ -1,0 +1,65 @@
+.registro{
+    margin: 60px;
+    font-family:Roboto Condensed;
+    font-size: 13px;
+    color: white;
+    width: 680px;
+    height: 600px;
+    background-color: rgba(0, 65, 57, 1);
+    border: 2px solid #A4BAB7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-bottom: 100px;
+}
+input{
+    width: 362px;
+    height: 30px;
+    border-radius: 6px;
+    border: 0px;
+    padding: 0px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.regis-input {
+    margin-top: 30px;
+}
+.mensaje{
+    width: 362px;
+    height: 150px;
+}
+button {
+    background-color: rgba(164, 186, 183, 1);
+    width: 100px;
+    height: 40px;
+    font-family: Roboto Condensed;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 0px;
+    padding: 0px;
+}
+.regis-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.privacidad {
+    width: 350px;
+    font-size: 9px;
+    overflow: hidden;
+}
+.logoimg {
+    width: 280px;
+    height: 150px;
+}
+.contacto {
+    display: flex;
+    justify-content: center;
+    font-family: Pacifico;
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+.dudas {
+    font-family: Roboto Condensed;
+    font-size: 20px;
+    margin: 0;
+}

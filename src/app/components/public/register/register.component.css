@@ -1,0 +1,118 @@
+.background-img{
+    position:relative;
+    width: 100%;
+    height:880px ;
+    object-fit: cover;
+}
+.cont{
+    position: relative;
+}
+.form-box{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    width: 936px;
+    height: 592px;
+    background-color: var(--main-color);
+    border: 3px solid var(--footer-color);
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.slogan-reg{
+    font-family: "Pacifico", serif;
+     font-weight: 400;
+   font-style: normal;
+   font-size: 32px;
+   color: var(--background-color);
+   background-color: var(--main-color);
+   width: 326px;
+   height: 203px;
+   text-align: center;
+
+
+}
+.logo-slogan{
+    margin-top: 170px;
+}
+label{
+    font-family: "Roboto Condensed", serif;
+    font-style: bold;
+    font-size: 16px;
+    color: var(--background-color);
+}
+input{
+    border-radius: 8px;
+    width: 208px;
+    height: 40px;
+}
+.adjuntar{
+    padding-left: 436px;
+    margin-top: -40px;
+
+}
+.button{
+    width: 170px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: var(--footer-color);
+    font-family:  "Roboto Condensed", serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+.adj{
+    font-family: "Roboto Condensed", serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--background-color);
+}
+.img-input{
+    height: 30px;
+    width: 380px;
+    transform: translate(30px, -30px);
+}
+
+@media screen and (max-width: 1200px){
+    .form-box{
+        width: 800px;
+        height: 592px;
+    }
+    .lefty{
+        display: none;
+    }
+    .adjuntar{
+        padding: 0%;
+        margin-left: 180px;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 1026px){
+    .form-box{
+        width: 800px;
+        height: 592px;
+    }
+    .lefty{
+        display: none;
+    }
+    .adjuntar{
+        padding: 0%;
+        margin-left: 140px;
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 920px){
+    .form-box{
+        width: 800px;
+        height: 592px;
+        position: absolute;
+        top: 25%;
+        left: 10%;
+    }
+    .lefty{
+        display: none;
+    }
+    .adjuntar{
+        padding: 0%;
+        margin-left: 100px;
+        margin-top: 30px;
+    }
+}

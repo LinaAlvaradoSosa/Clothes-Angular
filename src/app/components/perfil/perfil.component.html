@@ -1,0 +1,259 @@
+<div class="d-flex"style="flex-direction: row;height: 40rem; margin-top: 4rem; margin-bottom: 4rem;">
+    <div class="perfil" style="width: 20rem;">
+        <div style="width: 6rem;height: 6rem;overflow: hidden; justify-self: center; margin-bottom: 3rem; margin: 3rem;"><img [src]="user?.imagen" alt="P-Pic" style="object-fit: cover; width: 100%; height: 100%;" ></div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Nombre: </p>{{user?.nombre}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Correo: </p> {{user?.email}}</div>
+        <div class="d-flex"><p style="margin-right: 1.5rem;"> Telefono: </p> {{user?.telefono}}</div>
+        @if(estado){
+            <div style="justify-self: center; margin-top: 10rem;"><button class="icon-btn add-btn">
+            <div class="btn-txt btn-primary"type="button" data-bs-toggle="modal" data-bs-target="#exampleModa3" (click)="EPerfil()">UpdateUser</div>
+            </button></div>
+        }
+    </div>
+    <div class="d-flex" style="justify-content:flex-end;">
+      <div class="product_profile">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-underline navig"  role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Mis Productos</button>
+            </li>
+            @if(estado){
+              <li class="nav-underline navig" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Favoritos</button>
+              </li>
+            }
+            <li class="nav-underline navig" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Historial de Ventas</button>
+            </li>
+            <!-- Siguientes deben ser bloqueados si no hay token -->
+            @if(estado){
+              <li class="nav-underline navig" role="presentation">
+                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Historial de Compras</button>
+              </li>
+            }
+          </ul>
+          <div class="tab-content " id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+              <div class="d-flex flex-wrap" style="padding: 3rem">
+                @for (item of misproductos; track $index) {
+                  <div class="card" style="width: 18rem; height: 24rem;" >
+                      <div style="overflow: hidden; min-height: 13rem;">
+                          @if(estado){<div (click)="eliminarproducto(item._id)"><button class="d-flex" style="justify-self: flex-end; color: azure; background-color: brown; width: 1.2rem; height: 1.2rem; justify-content: center; align-items: center;">X</button></div>}
+                          <a [routerLink]="['/producto',item._id]" (click)="reloadPage()"><img src="{{item.imagen}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                      </div>
+                      <div class="card-body" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
+                        <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
+                        <p class="card-text">{{item.precio}}</p>
+                      </div>
+                    </div>
+              }
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            @for (item of favoritos; track $index) {
+              <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()">
+                <div style="overflow: hidden; min-height: 13rem;">
+                    @if (item.imagen) {
+                        <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                    }
+                </div>
+                <div class="card-body">
+                  <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
+                  <p class="card-text">{{item.precio}}</p>
+                </div>
+              </div>
+
+            }
+            </div>
+
+
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                </div>
+            <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+                </div>
+          </div>
+
+
+
+    </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -----------Boton de agregar------------------ -->
+
+<button class="icon-btn add-btn">
+    <div class="add-icon"></div>
+    <div class="btn-txt btn-primary"type="button" data-bs-toggle="modal" data-bs-target="#exampleModa2">Agregar un producto</div>
+</button>
+
+
+
+
+<div class="modal fade" id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Diligencia este formulario para crear un nuevo producto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formProduct" class="form">
+              <span class="input-span">
+                <label for="prenda" class="label">Prenda</label>
+                <input formControlName="prenda" type="text" name="prenda" id="prenda"
+              /></span>
+              <span class="input-span">
+                <p class="checkbox" ><strong>Seleccione solo una</strong></p>
+                <select formControlName="tipo"  id="opciones" name="opciones">
+                    <option value="ropa">Ropa</option>
+                    <option value="zapatos">Zapatos</option>
+                    <option value="accesorios">Acesorios</option>
+                  </select>
+              </span>
+              <span class="input-span">
+                <label for="precio" class="label">Precio</label>
+                <input formControlName="precio" type="text" name="precio" id="precio"
+              /></span>
+              <span class="input-span">
+                <label for="estado" class="label">Estado</label>
+                <input formControlName="estado" type="estado" name="estado" id="estado"
+              /></span>
+              <span class="input-span">
+                <label for="marca" class="label">Marca</label>
+                <input formControlName="marca" type="marca" name="marca" id="marca"
+              /></span>
+              <span class="input-span">
+                <label for="imagen" class="label">Imagen</label>
+                <input formControlName="imagen" type="text" name="imagen" id="imagen"
+              /></span>
+              <span class="input-span">
+                <label for="descripcion" class="label">Descripcion</label>
+                <input formControlName="descripcion" type="text" name="descripcion" id="descripcion"
+              /></span>
+              <span class="input-span">
+                <label for="talla" class="label">Talla</label>
+                <input formControlName="talla" type="text" name="talla" id="talla"
+              /></span>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn1" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" (click)="addProduct()" class="btn">Crear producto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Botton de update user -->
+
+
+  <div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header d-flex">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edita la informacion necesaria</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-left: 10rem;"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formUser" class="form">
+              <span class="input-span">
+                <label for="Nombre" class="label">Nombre</label>
+                <input formControlName="nombre" type="text" name="nombre" id="nombre" contenteditable=""
+              /></span>
+              <span class="input-span">
+                <label for="Apellido" class="label">Apellido</label>
+                <input formControlName="apellido" type="text" name="precio" id="precio"
+              /></span>
+              <span class="input-span">
+                <label for="email" class="label">email</label>
+                <input formControlName="email" type="text" name="precio" id="precio"
+              /></span>
+              <span class="input-span">
+                <label for="password" class="label">password</label>
+                <input formControlName="password" type="estado" name="estado" id="estado"
+              /></span>
+              <span class="input-span">
+                <label for="telefono" class="label">telefono</label>
+                <input formControlName="telefono" type="marca" name="marca" id="marca"
+              /></span>
+              <span class="input-span">
+                <label for="direccion" class="label">direccion</label>
+                <input formControlName="direccion" type="text" name="imagen" id="imagen"
+              /></span>
+              <span class="input-span">
+                <label for="ciudad" class="label">ciudad</label>
+                <input formControlName="ciudad" type="text" name="descripcion" id="descripcion"
+              /></span>
+              <span class="input-span">
+                <label for="imagen" class="label">imagen</label>
+                <input formControlName="imagen" type="text" name="talla" id="talla"
+              /></span>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn" (click)="EditarPerfil()">Editar</button>
+          <button type="button" class="btn btn1" data-bs-dismiss="modal" >Cerrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

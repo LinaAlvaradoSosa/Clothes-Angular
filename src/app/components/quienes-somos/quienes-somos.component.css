@@ -1,0 +1,12 @@
+.acercaDe {
+    font-family: 'Pacifico';
+    font-size: 64px;
+    margin-bottom: 60px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 100px;
+}
+

@@ -1,0 +1,108 @@
+nav {
+    background-color: rgba(0, 65, 57, 1);
+
+    height: 86px;
+    padding: 0;
+}
+
+.iconosNav {
+    gap:100px;
+    margin-right: 156px;
+    margin-left: 156px;
+}
+.iconos{
+    margin-right: 200px;
+}
+.icoNav{
+    width: 231px;
+    height: 84px;
+    margin-right: 100px;
+    margin-left: 156px;
+    cursor: pointer
+}
+
+.iconos1 {
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.btn {
+    background-color: rgba(0, 65, 57, 1);
+    color: white;
+    width: 180px;
+    height: 50px;
+    border-radius: 4px;
+}
+.btn1 {
+    width: 220px;
+    background-color: rgba(0, 65, 57, 1);
+    color: white;
+    height: 50px;
+    border-radius: 4px;
+}
+
+.perfil{
+    margin-left: 45px;
+    margin-top: 10px;
+
+}
+.profile{
+    display: flex;
+    align-items: start;
+    border-bottom: solid 5px var(--main-color);
+}
+.options{
+
+    align-items: center;
+}
+a{
+    gap: 20px;
+    font-family: pacifico;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+
+}
+.offcanvas{
+    background-color: var(--footer-color);
+    border: solid 5px var(--main-color);
+}
+.cart-count {
+    color: white;
+    font-family: Roboto Condensed;
+    font-size: 13px;
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+@media screen and (max-width: 874px){
+    .icoNav {
+        width: 100px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 744px){
+    .iconos{
+        margin-top: 5px;
+        margin-left: 150px;
+    }
+
+}
+
+@keyframes bounce{
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(8px)
+        }
+    75%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    }
+.bouncy:hover {
+    animation: bounce .5s ease;
+}

@@ -1,0 +1,71 @@
+<div class="cont">
+    <img class="background-img" src="registerbg.jpg" alt="">
+    <div class="container form-box">
+        <div class="d-flex justify-content-evenly align-content-center">
+            <div class=" lefty">
+                <div class=" logo-slogan d-flex flex-column align-items-center justify-content-center">
+                    <img src="logo-clothes.jpg" alt="">
+                    <p class="slogan-reg">Crea tu cuenta y empieza a salvar al mundo</p>
+                </div>
+            </div>
+            <form [formGroup]="formRegister" class="d-flex flex-column mt-5" action="">
+                <div class="d-flex gap-4 mt-3">
+                    <div class="d-flex flex-column">
+                        <label class="mb-2" for="nombre">Nombre</label>
+                        <input id="nombre" formControlName="nombre" type="text">
+                    </div>
+                    <div  class="d-flex flex-column ">
+                        <label class="mb-2" for="direccion">Dirección</label>
+                        <input id="direccion" formControlName="direccion" type="text">
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mt-3">
+                    <div class="d-flex flex-column">
+                        <label class="mb-2" for="apellido">Apellido</label>
+                        <input id="apellido" formControlName="apellido" type="text">
+                    </div>
+                    <div  class="d-flex flex-column">
+                        <label class="mb-2" for="ciudad">Ciudad</label>
+                        <input id="ciudad" formControlName="ciudad" type="text">
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mt-3">
+                    <div class="d-flex flex-column">
+                        <label class="mb-2" for="correo">Correo</label>
+                        <input id="correo" formControlName="email" type="text">
+                    </div>
+                    <div  class="d-flex flex-column">
+                        <label class="mb-2" for="tel">Teléfono</label>
+                        <input id="tel" formControlName="telefono" type="number">
+                    </div>
+                </div>
+                <div class="d-flex gap-4 mt-3">
+                    <div class="d-flex flex-column">
+                        <label class="mb-2" for="password">Contraseña</label>
+                        <input id="password" formControlName="password" type="password">
+                    </div>
+                    <div  class="d-flex flex-column">
+                        <label class="mb-2" for="birth">Fecha de nacimiento</label>
+                        <input class="dob" formControlName="dob" id="birth" type="date">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="">
+            <div class="d-block flex-column  adjuntar ">
+                <div class="d-flex gap-2 align-items-center mb-3 ">
+                    <img src="icon-adjuntar.png">
+                    <p class="adj" >Adjunta tu imagen de perfil</p>
+                </div>
+                <div>
+                    <input class="img-input" formControlName="imagen" type="text">
+                </div>
+                    <button type="button" (click)="register()" class="button">Registrate</button>
+                </div>
+        </div>
+    </div>
+
+</div>
+
+

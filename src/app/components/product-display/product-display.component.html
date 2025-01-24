@@ -1,0 +1,71 @@
+@if(product){
+    <div class="d-flex justify-content-center" style="margin-top: 4rem; flex-direction:column">
+        <div class="d-flex justify-content-center">
+            <div class="images" style="width: 30%;">
+                <div class="img-1" style="height: 27rem; margin-bottom: 2rem;">
+                    <img src="{{product.imagen[0]}}" alt="" id="imagen1">
+                </div>
+
+                <div class="imgs"style="height: 7rem; border: 1px solid #000; overflow: hidden;">
+                    <div><img src="{{product.imagen[1]}}" alt="" class="img-mini" style="width: 7rem;"></div>
+                    <div><img src="{{product.imagen[2]}}" alt="" class="img-mini" style="width: 7rem;"></div>
+                    <div><img src="{{product.imagen[3]}}" alt="" class="img-mini" style="width: 7rem;"></div>
+
+                </div>
+            </div>
+            <div class="product_info-sec " style="width: 30%;">
+                <div class="product" style="padding: 20px;">
+
+                    <div class="Roboto-Con">Talla</div>
+                    <!-- <div>{{product.prenda}}</div> -->
+                     <div class="Roboto-Con" style="font-size: 24px; font-weight: 200;">{{product.prenda}}</div>
+                     <div class="Roboto-Con" style="font-size: 18px; font-weight: bold; padding-bottom: 20px;"><p>{{product.precio}}</p></div>
+
+                    <!-- <div>{{product.}}</div> -->
+                     <div class="Roboto-Con" ><p>{{product.descripcion}}</p></div>
+                     <!-- <div>{{product.descripcion}}</div> -->
+                    <div class="Roboto-Con"><p>Estado: {{product.estado}}</p>
+                    <!-- <div>{{product.estado}}</div> --></div>
+                    <div class="buttonsections Roboto-Con"  >
+                        <button class="btn_addProduct button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Addcarrito(product)">Agregar al Carrito</button>
+                        <!-- <button aria-disabled="true" class="btn_trueque" style="margin: 2rem;border: 4px solid #004139;">Trueque</button> -->
+                    </div>
+
+
+                    <div class="about_seller" style="padding-top: 20px;">
+                        <p>Del vendedor</p>
+                        <div class="d-flex">
+                            <a style="width: 3.3rem; height: 3.3rem; overflow: hidden;"><img src="{{owner?.imagen}}" [routerLink]="['/perfil',ownerid]" alt="IMG" style="object-fit: cover; width: 100%; height: 100%; " ></a>
+                            <a ><p [routerLink]="['/perfil',ownerid]"  >{{owner?.nombre+" "+owner?.apellido}}</p></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <hr>
+        <div class="other_pro d-flex justify-content-center">
+            <p>Otros Productos:</p>
+            <div class="container-fluid d-flex" style="justify-content: space-evenly; padding: 6rem;">
+                @for (item of relatedproducts; track $index) {
+                    <div class="card" style="width: 18rem; height: 24rem;" [routerLink]="['/producto',item._id]" (click)="reloadPage()" >
+                        <div style="overflow: hidden;  min-height: 13rem;">
+                            <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
+                          <p class="card-text">{{item.precio}}</p>
+                        </div>
+                      </div>
+                }
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+}

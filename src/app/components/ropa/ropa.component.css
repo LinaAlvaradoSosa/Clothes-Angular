@@ -1,0 +1,65 @@
+.zapatos{
+    background-color: var(--zapatos-color);
+    border-top-right-radius: 8px;
+}
+.ropa{
+    background-color: var(--ropa-color);
+    border-top-right-radius: 8px;
+}
+.accesorios{
+    background-color: var(--accesorios-color);
+    border-top-right-radius: 8px;
+}
+
+.user-img{
+    height: 40px;
+    width: 40px;
+}
+.product-img{
+    height: 188px;
+    width: 100%;
+}
+p{
+    font-family: Roboto Condensed;
+    font-size: 14px;
+    line-height: 15px;
+}
+.precio{
+    font-size: 20px;
+}
+h6  {
+    font-family: Roboto Condensed;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+button{
+    font-family: Roboto Condensed;
+    font-size: 14px;
+    height: 50px;
+    width: 360px;
+    padding: 0;
+    border: 2px solid ;
+    border-color: var(--footer-color);
+}
+button:hover{
+    background-color: var(--main-color);
+    color: var(--footer-color);
+    border: none;
+}
+
+.card-body{
+    padding: 0;
+}
+.card{
+    border: none;
+    border-radius: 8px;
+}
+.prenda{
+    background-color: var(--footer-color);
+    margin: none;
+    height: fit-content;
+    width: 100%;
+}
+.product-text{
+    justify-content: start !important;
+}

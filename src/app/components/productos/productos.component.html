@@ -1,0 +1,165 @@
+<div class="d-flex justify-content-center buscador-box pb-4 pt-4">
+    <input (input)="buscar()" [formControl]="busqueda" class="buscador" type="search" placeholder="Busca lo que quieres usar hoy">
+</div>
+
+@if (items) {
+    <div class="container mt-3">
+    <div class="row row-cols-sm-1  row-cols-md-3  row-cols-lg-4 gap-sm-2  gap-md-3 gap-lg-5 justify-content-center m-3">
+        @for (item of items; track $index) {
+            <div class=" contenedor">
+                <div class=" mt-5">
+                    <div class="card h-100 gap-2" style="max-width: 18rem; min-width: 16rem;">
+                        <div class="card-body">
+                            <div [class.zapatos]="item.tipo=='zapatos'" [class.ropa]="item.tipo=='ropa'" [class.accesorios]="item.tipo=='accesorios'"  class="d-flex justify-content-start align-items-center ">
+                                <img type="button" class="user-img" src="{{item.imag}}" alt="">
+                                <h5 type="button" class="card-title">{{item.nombre}} {{item.apellido}}</h5>
+                            </div>
+                            <div>
+                                <!-- aqui va la imagen del producto -->
+                                <img class=" product-img" src="{{item.imagen}}" alt="buena la rata">
+
+                            </div>
+                            <div class="prenda">
+                                <h6 class="ms-3 card-subtitle pt-3 mb-2 text-body-secondary">{{item.prenda}}</h6>
+                                <div class="product-text">
+                                    <p class="ms-3   card-text">{{item.descripcion}}</p>
+                                    <p class="ms-3  card-text">{{item.estado}}</p>
+                                    <p class="ms-3 pb-3 card-text precio mt-5">${{item.precio}}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex   ">
+                                <button class="card-footer" routerLink="/producto/{{item._id}}" type="button">Comprar</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>
+}
+@if (!items) {
+    <div class="d-block boxs justify-content-center">
+        <div class="loader">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+    </div>
+}

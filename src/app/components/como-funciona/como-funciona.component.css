@@ -1,0 +1,25 @@
+.funciona{
+    font-family: 'pacifico';
+    font-size: 64px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+  .container img {
+    width: 45%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .container img:nth-child(odd) {
+    align-self: flex-start;
+  }
+  .container img:nth-child(even) {
+    align-self: flex-end;
+  }
+

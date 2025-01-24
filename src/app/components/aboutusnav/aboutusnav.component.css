@@ -1,0 +1,15 @@
+a {
+    width: 375px;
+    text-align: center;
+    font-family: Roboto Condensed;
+}
+.nav-link.active {
+    border-bottom: 1px solid gray
+  }
+.container-fluid {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+.nav-link.active:hover {
+    border-bottom: 4px solid rgba(0, 65, 57, 1)
+}
