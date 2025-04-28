@@ -28,8 +28,6 @@ export class RegisterComponent {
             imagen:['',[]],
         })
     }
-
-
     register(){
         this.userService.addUser(this.formRegister.value).subscribe({
             next:(resApi: any)=>{
@@ -39,7 +37,6 @@ export class RegisterComponent {
                     text:`¡Ahora inicia sesión ${resApi.nombre} y empieza a salvar al mundo! `
                 })
                 this.router.navigate(['/login'])
-
             },
             error:(error:any)=>{
                 console.log(error);

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CarritoService {
 
-   cart: any = []
+    cart: any = []
 
 
   constructor() {  }
@@ -18,4 +18,7 @@ export class CarritoService {
   getCartCount(): number {
     return this.cart.length;
   }
+  // deleteprodctcard(id :string){
+    
+  // }
 }
