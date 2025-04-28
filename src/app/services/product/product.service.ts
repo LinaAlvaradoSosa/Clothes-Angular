@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-  apiUrl:string ="http://localhost:4000/api"
+  apiUrl:string ="https://calm-savannah-05009-2b9edf3ccbff.herokuapp.com/"
 
   token: any = ""
 
