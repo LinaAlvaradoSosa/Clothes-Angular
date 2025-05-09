@@ -1,16 +1,21 @@
 .zapatos{
-    background-color: var(--zapatos-color);
+    background-color: #EBE6DA; 
+    margin: white;
+    margin: 2px;
     border-top-right-radius: 8px;
 }
 .ropa{
-    background-color: var(--ropa-color);
+    background-color: #EBE6DA; 
+    margin: white;
+    margin: 2px;
     border-top-right-radius: 8px;
 }
 .accesorios{
-    background-color: var(--accesorios-color);
+    background-color: #EBE6DA; 
+    margin: white;
+    margin: 2px;
     border-top-right-radius: 8px;
 }
-
 .user-img{
     height: 40px;
     width: 40px;
@@ -50,9 +55,17 @@ button:hover{
 .card-body{
     padding: 0;
 }
-.card{
+.card {
     border: none;
     border-radius: 8px;
+    padding: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 .prenda{
     background-color: var(--footer-color);

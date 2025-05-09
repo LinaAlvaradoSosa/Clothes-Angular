@@ -18,13 +18,13 @@
 
                     <div class="Roboto-Con">Talla</div>
                     <!-- <div>{{product.prenda}}</div> -->
-                     <div class="Roboto-Con" style="font-size: 24px; font-weight: 200;">{{product.prenda}}</div>
-                     <div class="Roboto-Con" style="font-size: 18px; font-weight: bold; padding-bottom: 20px;"><p>{{product.precio}}</p></div>
+                        <div class="Roboto-Con" style="font-size: 24px; font-weight: 200;">{{product.prenda}}</div>
+                        <div class="Roboto-Con" style="font-size: 18px; font-weight: bold; padding-bottom: 20px;"><p>{{product.precio}}</p></div>
 
                     <!-- <div>{{product.}}</div> -->
-                     <div class="Roboto-Con" ><p>{{product.descripcion}}</p></div>
-                     <!-- <div>{{product.descripcion}}</div> -->
-                    <div class="Roboto-Con"><p>Estado: {{product.estado}}</p>
+                        <div class="Roboto-Con" ><p>{{product.descripcion}}</p></div>
+                        <!-- <div>{{product.descripcion}}</div> -->
+                        <div class="Roboto-Con"><p>Estado: {{product.estado}}</p>
                     <!-- <div>{{product.estado}}</div> --></div>
                     <div class="buttonsections Roboto-Con"  >
                         <button class="btn_addProduct button" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="Addcarrito(product)">Agregar al Carrito</button>
@@ -55,17 +55,12 @@
                             <a><img src="{{item.imagen[0]}}" class="card-img-top" alt="..." style="object-fit: cover; width: 100%; height: 100%;"  [routerLink]="['/producto',item._id]"></a>
                         </div>
                         <div class="card-body">
-                          <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
-                          <p class="card-text">{{item.precio}}</p>
+                            <p class="card-text"  [routerLink]="['/producto',item._id]">{{item.prenda}}</p>
+                            <p class="card-text">{{item.precio}}</p>
                         </div>
-                      </div>
+                    </div>
                 }
             </div>
-
-
         </div>
-
     </div>
-
-
 }

@@ -106,3 +106,10 @@ a{
 .bouncy:hover {
     animation: bounce .5s ease;
 }
+@media screen and (max-width: 744px){
+    .iconos{
+        margin-top: 5px;
+        margin-left: 150px;
+    }
+
+}

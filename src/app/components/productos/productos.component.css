@@ -1,14 +1,20 @@
 .zapatos{
-    background-color: var(--zapatos-color);
+    background-color: #EBE6DA; 
+    margin: white;
+    margin: 2px;
     border-top-right-radius: 8px;
 }
 .ropa{
-    background-color: var(--ropa-color);
+    background-color: #EBE6DA;
+    margin: white;
     border-top-right-radius: 8px;
+    margin: 2px;
 }
 .accesorios{
-    background-color: var(--accesorios-color);
+    background-color: #EBE6DA;
     border-top-right-radius: 8px;
+    margin: white;
+    margin: 2px;
 }
 .card-body{
     border: solid 2px var(--footer-color);
@@ -54,10 +60,22 @@ button:hover{
 .card-body{
     padding: 0;
 }
-.card{
-    border: none;
-    border-radius: 8px;
+
+.card {
+  border: none;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
 .prenda{
     background-color: var(--footer-color);
     margin: none;
