@@ -43,6 +43,7 @@ button{
     height: 50px;
     width: 360px;
     padding: 0;
+    border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
     border: 2px solid ;
     border-color: var(--footer-color);
 }
@@ -75,4 +76,7 @@ button:hover{
 }
 .product-text{
     justify-content: start !important;
+}
+.card-title {
+    padding-left: 6px;
 }

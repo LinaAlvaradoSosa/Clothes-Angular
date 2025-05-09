@@ -1,19 +1,19 @@
 .zapatos{
     background-color: #EBE6DA; 
     margin: white;
-    margin: 2px;
+    margin-bottom: 2px;
     border-top-right-radius: 8px;
 }
 .ropa{
     background-color: #EBE6DA; 
     margin: white;
-    margin: 2px;
+    margin-bottom: 2px;
     border-top-right-radius: 8px;
 }
 .accesorios{
     background-color: #EBE6DA; 
     margin: white;
-    margin: 2px;
+    margin-bottom: 2px;
     border-top-right-radius: 8px;
 }
 
@@ -45,6 +45,7 @@ button{
     width: 360px;
     padding: 0;
     border: 2px solid ;
+    border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
     border-color: var(--footer-color);
 }
 button:hover{
@@ -52,9 +53,10 @@ button:hover{
     color: var(--footer-color);
     border: none;
 }
-
 .card-body{
-    padding: 0;
+    /* border: solid 2px var(--footer-color); */
+    border-radius: 9px;
+    padding: 3px;
 }
 .card {
     border: none;
@@ -77,4 +79,7 @@ button:hover{
 }
 .product-text{
     justify-content: start !important;
+}
+.card-title {
+    padding-left: 6px;
 }

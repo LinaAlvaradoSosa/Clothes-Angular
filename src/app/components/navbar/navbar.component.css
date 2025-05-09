@@ -75,10 +75,17 @@ a{
     margin-right: 40px;
 }
 
-@media screen and (max-width: 874px){
+
+@media screen and (max-width: 1155px){
     .icoNav {
-        width: 100px;
+        width: 120px;
         height: 50px;
+    }
+    .iconos1 {
+        width: 25px;
+    } 
+    .cart-count {
+        width: 25px;
     }
 }
 @media screen and (max-width: 744px){
